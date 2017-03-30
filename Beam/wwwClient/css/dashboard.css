@@ -1,0 +1,140 @@
+
+/* CSS Document */
+body {
+    font:12px arial;
+    color: #222;
+    text-align:center;
+    padding:35px; }
+  
+p, span {
+    margin:0;
+    padding:0; }
+  
+input { font:12px arial; }
+  
+a {
+    color:#0000FF;
+    text-decoration:none; }
+  
+    a:hover { text-decoration:underline; }
+  
+#wrapper, #loginform {
+  /*  margin:0 auto;
+    padding-bottom:25px;
+    background:#EBF4FB;
+    width:395px;
+    border:1px solid #ACD8F0; */
+      margin-left:0px;
+    padding-bottom:0px;
+    background:#EBF4FB;
+    width:400px;
+    height:302px;
+    border:0px solid #ACD8F0;
+
+    }
+  
+
+  
+#chatbox {
+    text-align:left;
+    margin:0 auto;
+    margin-bottom:25px;
+   /* padding:10px; */
+    background:#fff;
+    height:190px;
+    width:380px;
+    border:1px solid #ACD8F0;
+    overflow:auto; }
+  
+#usermsg {
+    width:380px;
+    border:1px solid #ACD8F0; }
+  
+#submit { width: 60px; }
+  
+.error { color: #ff0000; }
+  
+#menu { padding:12.5px 25px 12.5px 25px; }
+  
+.welcome { float:left; }
+  
+.logout { float:right; }
+  
+.msgln { margin:0 0 2px 0; }
+
+
+
+
+      #beamChat{
+                position: absolute;
+
+                background-color: #ff0000;
+
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -o-user-select: none;
+                -ms-user-select: none;
+                -khtml-user-select: none;     
+                user-select: none;
+            }
+
+
+
+         #elem{
+                position: absolute;
+                background-color: green;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -o-user-select: none;
+                -ms-user-select: none;
+                -khtml-user-select: none;     
+                user-select: none;
+                   overflow:auto; 
+              margin:0 auto;
+            }
+
+         #chatBox2{
+                position: absolute;
+                background-color: green;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -o-user-select: none;
+                -ms-user-select: none;
+                -khtml-user-select: none;     
+                user-select: none;
+                   overflow:auto; 
+              margin:0 auto;
+              border-radius: 5px;
+              border:1px solid #000000;
+            }
+
+         #sendChat{
+                position: absolute;
+                background-color: green;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -o-user-select: none;
+                -ms-user-select: none;
+                -khtml-user-select: none;     
+                user-select: none;
+                   overflow:auto; 
+              margin:0 auto;
+            }
+
+/*#chatbox {
+    text-align:left;
+    margin:0 auto;
+    margin-bottom:25px;
+    padding:10px;
+    background:#fff;
+    height:270px;
+    width:430px;
+    border:1px solid #ACD8F0;
+    overflow:auto; }
+*/
+	#container {
+				position:absolute;
+                background-color:none;
+           
+            border:1px solid #000000;
+				}

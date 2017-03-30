@@ -1,0 +1,35 @@
+{
+  "name": "myapp",
+  "version": "0.0.1",
+  "dependencies": {
+    "carina": "^0.7.0",
+    "express": "^4.15.2",
+    "passport": "^0.3.2",
+    "passport-beam": "^1.0.4",
+    "socket.io": "^1.7.3",
+    "socket.io-client": "^1.7.3",
+    "morgan": "~1.5.2",
+    "cookie-parser": "latest",
+    "express-session": "latest",
+    "ejs": "latest",
+    "body-parser": "latest",
+    "passport-local": "~1.0.0",
+    "connect-flash": "~0.1.1",
+    "bcrypt": "1.0.2",
+    "colors": "^1.1.2",
+    "beam-client-node": "^0.10.4",
+    "http": "0.0.0",
+    "https": "^1.0.0",
+    "jquery": "^3.1.1"
+
+
+  },
+  "scripts": {
+    "start": "node chatbotBeam.js"
+  },
+  "description": "beam",
+  "main": "chatbotBeam.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
+}

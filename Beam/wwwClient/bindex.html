@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <!--<script src="js/carina.js"></script>-->
+    <link rel="stylesheet" href="css/dashboard.css">
+
+<script>
+              var mydragg = function () {
+                return {
+                    move: function (divid, xpos, ypos) {
+                        divid.style.left = xpos + 'px';
+                        divid.style.top = ypos + 'px';
+                    },
+                    startMoving: function (divid, container, evt) {
+                        evt = evt || window.event;
+                        var posX = evt.clientX,
+                            posY = evt.clientY,
+                            divTop = divid.style.top,
+                            divLeft = divid.style.left,
+                            eWi = parseInt(divid.style.width),
+                            eHe = parseInt(divid.style.height),
+                            cWi = parseInt(document.getElementById(container).style.width),
+                            cHe = parseInt(document.getElementById(container).style.height);
+                        document.getElementById(container).style.cursor = 'move';
+                        divTop = divTop.replace('px', '');
+                        divLeft = divLeft.replace('px', '');
+                        var diffX = posX - divLeft,
+                            diffY = posY - divTop;
+                        document.onmousemove = function (evt) {
+                            evt = evt || window.event;
+                            var posX = evt.clientX,
+                                posY = evt.clientY,
+                                aX = posX - diffX,
+                                aY = posY - diffY;
+                            if (aX < 0) aX = 0;
+                            if (aY < 0) aY = 0;
+                            if (aX + eWi > cWi) aX = cWi - eWi;
+                            if (aY + eHe > cHe) aY = cHe - eHe;
+                            mydragg.move(divid, aX, aY);
+                        }
+                    },
+                    stopMoving: function (container) {
+                        var a = document.createElement('script');
+                        document.getElementById(container).style.cursor = 'default';
+                        document.onmousemove = function () { }
+                    },
+                }
+            }();
+
+            connectedToSocket = function()
+            {
+                document.getElementById("welcome").innerHTML = '';
+                document.getElementById("welcome").innerHTML += "Beam Chat: Connected";
+            }
+
+            disconnectedToSocket = function()
+            {
+                    document.getElementById("welcome").innerHTML = '';
+                    document.getElementById("welcome").innerHTML += "Beam Chat: disconnected";
+            }
+
+</script>
+
+
+    <script>
+        $(function () {
+
+            // var socket = io.connect('http://localhost:8001');
+            var iosocket = io.connect('http://localhost:8080');
+            iosocket.on('connect', function () {
+
+               
+            connectedToSocket();
+
+
+              /*  $('#incomingChatMessages').append($('<li>Connected</li>')); */
+                iosocket.on('authenticated', function (message) {
+                   console.log('client recieved authenticated message');
+                });
+
+                /*  $('#incomingChatMessages').append($('<li>Connected</li>')); */
+                iosocket.on('followed', function (message) {
+                    console.log('client recieved a follow');
+                });
+
+                iosocket.on('constupdate', function (message) {
+                    console.log(message);
+                    console.log('client recieved an update');
+                });
+
+                iosocket.on('message', function (message) {
+                    $('#incomingChatMessages').append($('<li></li>').text(message));
+                           var objDiv = document.getElementById("chatbox");
+                objDiv.scrollTop = objDiv.scrollHeight;
+                });
+
+                //server disconnected
+                iosocket.on('disconnect', function () {
+                disconnectedToSocket();
+                });
+
+            });
+
+
+            $('#outgoingChatMessage').keypress(function (event) {
+                if (event.which == 13) {
+                    event.preventDefault();
+                    iosocket.send($('#outgoingChatMessage').val());
+                    $('#outgoingChatMessage').val('');
+                }
+            });
+        });
+    </script>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+
+    <div id="container" style="width:1000px;height: 1000px;top:0px;left:0px;"> 
+        <div id="elem" onmousedown="mydragg.startMoving(this,'container',event);" onmouseup="mydragg.stopMoving('container');"
+            style="width: 400px; height: 250px; left: 136px; top: 200px;">
+
+            <div style="max-width:400px;max-height:250px;padding:10px">               
+               <!-- <ul id="incomingChatMessages"></ul> -->
+            </div>
+            
+        </div>
+
+        <div id="sendChat" onmousedown="mydragg.startMoving(this,'container',event);" onmouseup="mydragg.stopMoving('container');"
+            style="width: 400px; height: 100px; left: 20px; top: 0px;">
+            <div style="max-width:400px;max-height:250px;padding:10px">
+          <!-- <span>Send Message: <input type="text" id="outgoingChatMessage"></span> -->
+           
+            </div>
+            
+        </div>
+
+        <div id="chatBox2" onmousedown="mydragg.startMoving(this,'container',event);" onmouseup="mydragg.stopMoving('container');"
+            style="width:400px;height:302px; left: 100px; top: 100px;">
+                <div id="wrapper">
+                        <div id="menu">
+                            <p id="welcome"></p>
+                          <!--  <p class="logout"><a id="exit" href="#">Exit Chat</a></p> -->
+                            <div style="clear:both"></div>
+                        </div>
+                        
+                        <div id="chatbox">
+                              <ul id="incomingChatMessages"></ul>
+                              <!--  <div style="max-width:400px;max-height:250px;padding:10px">               
+                                  
+                                </div> -->
+                        </div>
+                              
+  
+            <span>Send Message: <input name="usermsg" type="text" id="outgoingChatMessage"></span>
+                </div>
+
+            </div>
+
+    
+    
+    
+    
+    </div>
+
+</body>
+
+</html>
+
+ <!--   <div id='container'>
+        <div id="elem" onmousedown='mydragg.startMoving(this,"container",event);' onmouseup='mydragg.stopMoving("container");' style="width: 200px;height: 100px;">
+            <div style='width:100%;height:100%;padding:10px'>
+                <select id=test>
+					<option value=1>first
+					<option value=2>second
+				</select>
+                <INPUT TYPE=text value="123">
+            </div>
+        </div>
+
+        <div id="beamChat" onmousedown='mydragg.startMoving(this,"container",event);' onmouseup='mydragg.stopMoving("container");'
+            style="width: 200px;height: 100px;">
+            <div style='width:100%;height:100%;padding:10px'>
+                Beam Incoming Chat:
+                <ul id="incomingChatMessages"></ul>
+                <br />
+                <input type="text" id="outgoingChatMessage">
+            </div>
+        </div>
+
+    </div> -->

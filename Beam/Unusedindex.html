@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <!--<script src="js/carina.js"></script>-->
+    <script>
+        $(function(){
+           // var socket = io.connect('http://localhost:8001');
+            var iosocket = io.connect('http://localhost:8001');
+            iosocket.on('connect', function () {
+                $('#incomingChatMessages').append($('<li>Connected</li>'));
+
+                iosocket.on('message', function (message) {
+                   $('#incomingChatMessages').append($('<li></li>').text(message));
+                });
+
+                //server disconnected
+                iosocket.on('disconnect', function() {
+                    $('#incomingChatMessages').append('<li>Disconnected</li>');
+                });
+
+            });
+
+
+            $('#outgoingChatMessage').keypress(function(event) {
+                if(event.which == 13) {
+                    event.preventDefault();
+                    iosocket.send($('#outgoingChatMessage').val());
+                    $('#outgoingChatMessage').val('');
+                }
+            });
+        });
+    </script>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    Beam Incoming Chat: <ul id="incomingChatMessages"></ul>
+    <br />
+    <input type="text" id="outgoingChatMessage">
+</body>
+</html>

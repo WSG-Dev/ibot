@@ -1,0 +1,40 @@
+<!-- views/index.ejs -->
+<!doctype html>
+<html>
+<head>
+	<title>Index Page</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+	<style>
+		body 		{ padding-top:80px; }
+	</style>
+</head>
+  <body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <div id="mainContent" class="divContent"></div>
+    <video id="vidbox" width="85" height="48"></video>
+    <audio id="jukebox"></audio>
+    <img id="picbox" />
+    <canvas id="mainCanvas" class="canvasgame" width="85px" height="48px"></canvas>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script>
+      var socket = io.connect('http://localhost');
+      socket.on('connect', function (data) {
+      console.log(data);
+      socket.emit('my other event', { my: 'data' });
+      });
+    </script>
+    Beam Incoming Chat: <ul id="incomingChatMessages"></ul>
+    <br />
+    <input type="text" id="outgoingChatMessage">
+
+    </body>
+</html>
+
+
