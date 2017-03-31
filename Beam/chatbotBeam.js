@@ -72,6 +72,7 @@ server.listen(port, function () {
 //socket.io stuff
 //sockets
 var connections = 0;
+var isConnected = false;
 io.on('connection', function (socket) {
 
    // console.log('Auth Token is ' + xd);
@@ -86,6 +87,7 @@ io.on('connection', function (socket) {
     socket.on('disconnect', function () {
         console.log(colors.magenta(`New Socket Event`));
         console.log(socket.name + ' disconnected');
+        socket.disconnect;
     });
 
     socket.on('message', function (message) {
@@ -102,9 +104,12 @@ io.on('connection', function (socket) {
        // io.emit('authenticated' , message);
     });
     */
+    if (!isConnected)
+    {
+        CreateBeamObjects(passport.BBBToken, null);
+        console.log('connect to socket ' + connections + ' times');
+    }
 
-    CreateBeamObjects(passport.BBBToken, null);
-    console.log('connect to socket ' + connections + ' times');
 
 });
 
@@ -117,7 +122,7 @@ function CreateBeamObjects(Token , message) {
 
         bc = new beamchat(passport.BBBToken);
         co = new constellation();
-
+        isConnected = true;
         console.log('Authenticated To Beam');
 
 

@@ -115,7 +115,6 @@
     <Content Include="testjs\load_albums.js" />
     <Content Include="testjs\debugging.js" />
     <Content Include="Global.asax" />
-    <Content Include="index.html" />
     <Content Include="testjs\play.html" />
     <Content Include="app\routes.js" />
     <Content Include="testjs\server.js" />

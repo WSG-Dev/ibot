@@ -68,7 +68,7 @@ let beamchat = function (authToken) {
     
          */
 
-        var messagessent = 0;
+      //  var messagessent = 0;
         function createChatSocket(userId, channelId, endpoints, authkey) {
 
             if (userId == null) {
@@ -87,13 +87,13 @@ let beamchat = function (authToken) {
                 self.emit('UserLeave', data);
             });
             socket.on('ChatMessage', data => {
-                messagessent = messagessent + 1;
+               // messagessent = messagessent + 1;
                 //console.log('Message Sent from Beam ' + messagessent + ' times');
                
                try {
                    self.emit('ChatMessage', data);          
                } catch (error) {
-                   console.log('error sending to beam');
+                   console.log('error sending to beam' + error);
                }
 
             });
