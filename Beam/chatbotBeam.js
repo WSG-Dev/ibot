@@ -130,7 +130,10 @@ function CreateBeamObjects(Token , message) {
  
                 console.log(colors.red(`ChatMessage`));
 
-                console.log(`chanID: ${data.channel} [${data.user_roles[0]}] ${data.user_name} - Level ${data.user_level}`)
+                console.log(`chanID: ${data.channel} [${data.user_roles[0]}] ${data.user_name} - Level 
+                {
+                    if(${data.user_level} == undefined){'No Level'}else {${data.user_level}}
+                }`)
 
                 let t = '';
                 for (key in data.message.message) {
@@ -203,7 +206,7 @@ co.on('event', function (data) {
             io.emit('constupdate', data);
             break;
         case ('followed'):
-            //console.log(data.info);
+            console.log('A user has followed ' + JSON.stringify(data,null,2));
             if (data.info.following == true) {
                // if (bl.check(data.info.user.username) == false) {
 

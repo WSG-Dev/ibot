@@ -83,8 +83,9 @@
 
                 /*  $('#incomingChatMessages').append($('<li>Connected</li>')); */
                 iosocket.on('followed', function (message) {
-
-                    console.log('client recieved a follow');
+                   
+                    $('#incomingChatMessages').append($('<li></li>').text(JSON.stringify(message,null,2)));
+                    
                 });
 
                 iosocket.on('constupdate', function (message) {
