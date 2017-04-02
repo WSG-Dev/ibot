@@ -29,7 +29,7 @@ var express = require('express');
 var app = express();
 var server = require('http').createServer(app);
 const io = require('socket.io')(server);
-
+var fs = require('fs');
 
 require('./config/passport')(passport);
 
@@ -212,7 +212,26 @@ co.on('event', function (data) {
 
                 //    bc.say(`User ${data.info.user.username} Followed the Channel! `)
                     io.emit('followed', data);
-                
+/*            
+            var httpnew = require('http'),
+    fsnew = require('fs');
+fsnew.readFile(__dirname + '/wwwClient/overlay.html', function (err, html) {
+    if (err) {
+        throw err; 
+    }       
+    httpnew.createServer(function(request, response) {  
+        response.writeHeader(200, {"Content-Type": "text/html"});  
+        response.write(html);  
+        response.end();  
+    }).listen(8081);
+});*/
+app.get('/overlay.html', function(req, res) {
+
+    
+    res.render('overlay.html');
+});
+
+
               //  }
             }
             else {
