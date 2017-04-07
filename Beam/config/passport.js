@@ -88,7 +88,7 @@ module.exports = function (passport) {
             passport.use(new BeamStrategy({
                 clientID: configAuth.beamAuth.clientID,
                 clientSecret: configAuth.beamAuth.clientSecret,
-                callbackURL: "http://localhost:8080/auth/beam/callback"
+                callbackURL: "http://localhost:8081/auth/beam/callback"
             },
               function(accessToken, refreshToken, profile, done) {
 

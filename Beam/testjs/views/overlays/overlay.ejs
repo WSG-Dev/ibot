@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <!--<script src="js/carina.js"></script>-->
+    <title></title>
+	<meta charset="utf-8" />
+
+<script>
+        $(function () {
+
+            // var socket = io.connect('http://localhost:8001');
+            var iosocket = io.connect('http://localhost:8080');
+            iosocket.on('connect', function () {
+
+               
+            connectedToSocket();
+
+            console.log('hello');
+              /*  $('#incomingChatMessages').append($('<li>Connected</li>')); */
+                iosocket.on('authenticated', function (message) {
+                   console.log('client recieved authenticated message');
+                });
+
+                /*  $('#incomingChatMessages').append($('<li>Connected</li>')); */
+                iosocket.on('followed', function (message) {
+                   
+                    $('#incomingChatMessages').append($('<li></li>').text(JSON.stringify(message,null,2)));
+                    
+                });
+
+                iosocket.on('message', function (message) {
+                    $('#incomingChatMessages').append($('<li></li>').text(message));
+                           var objDiv = document.getElementById("chatbox");
+                objDiv.scrollTop = objDiv.scrollHeight;
+                });
+
+                //server disconnected
+                iosocket.on('disconnect', function () {
+                disconnectedToSocket();
+                });
+
+            });
+        });
+    </script>
+</head>
+<body>
+<p>Overlay EJS</p>
+</body>
+</html>

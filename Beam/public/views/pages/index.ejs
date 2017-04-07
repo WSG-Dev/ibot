@@ -1,0 +1,29 @@
+
+
+<!DOCTYPE html>
+<html lang=”en”>
+<% include ../partials/head %>
+<body>
+<% include ../partials/nav %>
+<!--<section name="jumbotron" >
+ <div class="jumbotron text-center">
+ <h1>CodePrep.io Presents</h1>
+ <p>Using EJS templating with Node.js</p>
+ </div>
+ </section>-->
+
+ 	<div class="jumbotron text-center">
+		<h1><span class="fa fa-lock"></span> Node Authentication</h1>
+
+		<p>Login or Register with:</p>
+		<a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Local Login</a>
+		<a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Local Signup</a>
+		<a href="/auth/beam" class="btn btn-primary"><span class="fa fa-beam"></span> Beam</a>
+	</div>
+
+<% include ../partials/3columns %>
+<% include ../partials/footer %>
+<% include ../partials/scripts %>
+
+</body>
+</html>

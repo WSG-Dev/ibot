@@ -89,6 +89,8 @@ client.request('GET', `users/current`)
 
 
     channelId = response.body.channel.id
+
+   console.log(channelId); 
     return client.chat.join(response.body.channel.id);
 })
 .then(response => {

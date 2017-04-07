@@ -133,8 +133,6 @@ let beamchat = function (authToken) {
 
                     //change user to mod
 
-                    var contentlong = authToken.length + Date.now() + (365 * 24 * 60 * 60 * 1000).length;
-
 /*Found it
 So, you need the channel:update:self scope to use this endpoint
 PATCH /channels/{channelId}/users/{userId}
@@ -142,6 +140,10 @@ PATCH /channels/{channelId}/users/{userId}
 Then you send it as a application/json header with this payload:
 {"add": ["Mod"]}
 Remember the token in the header*/
+
+//
+/*582310 channelId
+862913 userId*/
 
 var channelId = 582310;
 var userId = 949494;
