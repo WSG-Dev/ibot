@@ -38,6 +38,7 @@ app.use(morgan('dev'));
 
 app.use(express.static(__dirname + '/wwwClient'));
 app.use(express.static(__dirname + '/views'));
+app.use(express.static(__dirname + '/public'));
 app.use(cookieParser());
 
 app.use(bodyParser.json());

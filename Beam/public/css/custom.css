@@ -1,0 +1,242 @@
+﻿.btn-outline-2 {
+  color: #c90808;
+  border-color: red;
+  border: 1px solid;
+}
+.btn-outline-2:hover,
+.btn-outline-2:focus,
+.btn-outlinn-2:active,
+.btn-outline-2.active {
+  color: white;
+  background-color: #000000;
+  border-color: #c90808;
+}
+
+
+
+
+
+/*
+    @hiercelik - hiercelik.net
+    @koalapix - koalapix.com
+*/
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css);
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web&subset=latin,latin-ext);
+@media (min-width: 768px) {
+    .onl_row-sm-offset-3 div:first-child[class*="col-"] {
+        margin-left: 25%;
+    }
+}
+body {
+    font-family: 'Titillium Web', sans-serif; 
+}
+.onl_login .onl_authTitle {
+    text-align: center;
+	line-height: 300%;
+}
+	
+.onl_login .onl_socialButtons a {
+	color: white; // In yourUse @body-bg 
+	opacity:0.9;
+}
+.onl_login .onl_socialButtons a:hover {
+    color: white;
+	opacity:1;    	
+}
+.onl_login .onl_socialButtons .onl_btn-facebook {background: #3b5998;border-color:#172d5e}
+.onl_login .onl_socialButtons .onl_btn-twitter {background: #00aced;border-color:#043d52}
+.onl_login .onl_socialButtons .onl_btn-google-plus {background: #b31217;border-color:#e52d27}
+.onl_login .onl_socialButtons .onl_btn-soundcloud {background: #6441A4;border-color:#6441A4}
+.onl_login .onl_socialButtons .onl_btn-github {background: #c32f10;border-color:#6b1301}
+.onl_login .onl_socialButtons .onl_btn-steam {background: #000000;border-color:#292929}
+.onl_login .onl_socialButtons .onl_btn-pinterest {background: #cc2127;border-color:#780004}
+.onl_login .onl_socialButtons .onl_btn-vimeo {background: #1ab7ea;border-color:#162221}
+.onl_login .onl_socialButtons .onl_btn-lastfm {background: #c3000d;border-color:#5e0208}
+.onl_login .onl_socialButtons .onl_btn-yahoo {background: #400191;border-color:#230052}
+.onl_login .onl_socialButtons .onl_btn-vk {background: #45668e;border-color:#1a3352}
+.onl_login .onl_socialButtons .onl_btn-spotify {background: #7ab800;border-color:#3a5700}
+.onl_login .onl_socialButtons .onl_btn-linkedin {background: #0976b4;border-color:#004269}
+.onl_login .onl_socialButtons .onl_btn-stumbleupon {background: #eb4924;border-color:#943019}
+.onl_login .onl_socialButtons .onl_btn-tumblr {background: #35465c;border-color:#142030}
+
+
+.onl_login .onl_loginOr {
+	position: relative;
+	font-size: 1.5em;
+	color: #aaa;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+.onl_login .onl_loginOr .onl_hrOr {
+	background-color: #cdcdcd;
+	height: 1px;
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+}
+.onl_login .onl_loginOr .onl_spanOr {
+	display: block;
+	position: absolute;
+	left: 50%;
+	top: -0.6em;
+	margin-left: -1.5em;
+	background-color: white;
+	width: 3em;
+	text-align: center;
+}			
+
+.onl_login .onl_loginForm .input-group.i {
+	width: 2em;
+}
+.onl_login .onl_loginForm  .help-block {
+    color: red;
+}
+
+	
+@media (min-width: 768px) {
+    .onl_login .onl_forgotPwd {
+        text-align: right;
+		margin-top:10px;
+ 	}		
+}
+
+
+/* USER PROFILE */
+
+/*font Awesome http://fontawesome.io*/
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+body {
+  margin-top:45px;
+}
+/*--------------------------------------------------------------------------
+  Navbar Style
+--------------------------------------------------------------------------*/
+.navbar {
+  border-bottom-left-radius:0; /*Change bootstrap default border-radius for menu*/
+}
+@media(min-width:768px) {
+  .navbar .navbar-brand {
+    width:224px; /*Change the width of .navbar-brand to center text and align with .sider-navbar border-right*/
+    text-align: center;
+  }
+}
+/*--------------------------------------------------------------------------
+  Side Navigation
+--------------------------------------------------------------------------*/
+@media(min-width:768px) {
+    .sider-navbar {
+        position: fixed;
+        top: 51px; /*Change to reposition .sider-navbar from top*/
+        left: 225px;
+        width: 225px;
+        margin-left: -225px;
+        border-right:1px solid #E7E7E7; /*Change for right side border color*/
+        border-radius: 0;
+        overflow-y: auto;
+        background: #F8F8F8; /*Change for background color*/
+        bottom: 0;
+        overflow-x: hidden;
+        padding-bottom: 40px;
+    }
+    
+    .sider-navbar li.sider-menu {
+      
+    }
+    .sider-navbar li.sider-menu ul {
+        width: 225px;
+    }
+    .sider-navbar li.sider-menu > ul > li,
+    .sider-navbar li.sider-menu ul li ul li{
+      border-top:1px solid #E7E7E7;/*Change for .sider-menu border color*/
+     -webkit-transition: all 0.3s ease-out;
+     transition: all 0.3s ease-out;
+    }
+    .sider-navbar li.sider-menu > ul > li:last-child {
+      border-bottom:1px solid #E7E7E7;/*Change for .sider-menu border color*/
+    }
+    .sider-navbar li.sider-menu > ul > li.active,
+    .sider-navbar li.sider-menu > ul > li:hover,
+    .sider-navbar li.sider-menu ul li ul li:hover{
+      border-right:6px solid #dddddd;
+    }
+    .sider-navbar li.sider-menu ul li ul li:hover{
+      background:#FFFFFF;/*Change for .sider-menu border color*/
+    }
+    .sider-navbar li.sider-menu ul li a {
+      outline: none;
+      padding:15px;
+    }
+    
+}
+.sider-navbar li.sider-menu ul {
+  list-style:none;
+  padding: 0;
+}
+
+.sider-navbar li.sider-menu ul li a {
+    display: block;
+    padding:15px;
+    text-decoration: none;
+    color:#5E5E5E;/*Change for .sider-menu color*/
+}
+.sider-navbar li.sider-menu ul li ul {
+  background-color:#f3f3f3;/*Change for .sider-menu background-color*/
+}
+/*--------------------------------------------------------------------------
+  Profile container
+  Thanks to keenthemes' bootstrap snippet for a starting point for the styles
+  http://bootsnipp.com/snippets/featured/user-profile-sidebar 
+--------------------------------------------------------------------------*/
+#profile {
+  
+}
+.profile-userpic img {
+  float: none;
+  margin: 12px auto 0;
+  padding:6px;
+  width: 50%;
+  height: 50%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+  border-left: 4px solid #333333;
+  border-right: 4px solid #333333;
+}
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 16px;
+  color: #333333;
+}
+
+.profile-usertitle-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-usertitle-title {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+/*Hide profile picture on smaller devices*/
+@media(max-width:768px) {
+  #profile {
+    display:none;
+  }
+}
+/*--------------------------------------------------------------------------
+  Page Keeper
+  Setup layout so the main content will be to the right of .sider-navbar
+--------------------------------------------------------------------------*/
+@media(min-width:768px) {
+    #page-keeper {
+      width: 100%;
+      padding: 10px 10px 10px 225px;
+    }
+}
+
+

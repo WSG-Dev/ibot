@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>iBot - Dashboard</title>
+	<link href="/css/bootstrap.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="/vendor/device-mockups/device-mockups.min.css">
+
+	<!-- OTHERS -->
+	<link rel="stylesheet" href="/vendor/nprogress/nprogress.css">
+	<link rel="stylesheet" href="/vendor/iCheck/skins/flat/green.css">
+	<link rel="stylesheet" href="/vendor/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css">
+	<link rel="stylesheet" href="/vendor/jqvmap/dist/jqvmap.min.css">
+	<link rel="stylesheet" href="/vendor/bootstrap-daterangepicker/daterangepicker.css">
+
+	<!-- Theme CSS -->
+	<link href="/css/new-age.css" rel="stylesheet" />
+	<link rel="stylesheet" href="/build/css/custom.css">
+
+
+
+
+</head>
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="/" class="site_title"><i class="fa fa-heartbeat"></i> <span>iBot StreamBot</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+			<% include user/default/home/profile-qi.ejs %>
+			<% include user/default/home/sidebar.ejs %>
+			<% include user/default/home/menufooter.ejs %>
+				</div>
+			</div>
+			<% include user/default/home/topnav.ejs %>
+			<div class="right_col" role="main">
+
+			<% include user/default/home/title.ejs %>
+
+			<% include user/default/home/info.ejs %>
+			<center><% include user/default/home/analytics.ejs %></center>
+		 <% include user/default/home/overal.ejs %>
+		</div>
+	</div>
+
+
+
+</body>
+</html>
