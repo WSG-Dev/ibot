@@ -6,6 +6,14 @@ module.exports = function (app, passport , bc)
 		res.render('index.ejs');
 	});
 
+	app.get('/dash', function (req, res) {
+	    res.render('dash.ejs'); // load the dash.ejs file
+	});
+
+	app.get('/chat', function (req, res) {
+	    res.render('chat.ejs'); // load the dash.ejs file
+	});
+
 /*	app.get('/bIndex.html', function (req, res) {
 	    res.sendFile(__dirname + '/wwwClient/bIndex.html');
 	});*/
