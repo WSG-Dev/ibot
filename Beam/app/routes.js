@@ -3,7 +3,7 @@
 module.exports = function (app, passport , bc)
 {
 	app.get('/', function(req, res){
-		res.render('pages/index.ejs');
+		res.render('index.ejs');
 	});
 
 /*	app.get('/bIndex.html', function (req, res) {

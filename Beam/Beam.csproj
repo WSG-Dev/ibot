@@ -84,9 +84,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="albums\Italy2010\hedgehog2.jpg" />
-    <Content Include="albums\Japan2012\hedgehog4.jpg" />
-    <Content Include="albums\Korea2014\hedgehog1.jpg" />
     <Content Include="app\js\beamchat.js" />
     <Content Include="app\js\beaminteractive.js" />
     <Content Include="app\js\blacklist.js" />
@@ -97,19 +94,13 @@
     <Content Include="app\js\radio.js" />
     <Content Include="app\js\teamspeak.js" />
     <Content Include="app\js\twitterbot.js" />
-    <Content Include="wwwClient\bindex.html" />
-    <Content Include="wwwClient\index.html" />
-    <Content Include="wwwClient\js\main.js" />
-    <Content Include="app\models\user.js" />
     <Content Include="chatbotBeam.js" />
     <Content Include="config\auth.js" />
     <Content Include="testjs\beamConfig.js" />
     <Content Include="testjs\chatbotFollow.js" />
     <Content Include="testjs\chatbot2.js" />
     <Content Include="testjs\chatbotPassport.js" />
-    <Content Include="chat\app.js" />
     <Content Include="testjs\chatbot.js" />
-    <Content Include="chat\index.html" />
     <Content Include="config\passport.js" />
     <Content Include="testjs\initBot.js" />
     <Content Include="testjs\load_albums.js" />
@@ -120,8 +111,6 @@
     <Content Include="testjs\server.js" />
     <Content Include="Web.config" />
     <Content Include="testjs\webserver.js" />
-    <Content Include="wwwClient\vendor\jquery-1.11.2.min.js" />
-    <Content Include="wwwClient\vendor\modernizr-2.8.3.min.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -134,10 +123,6 @@
     <Content Include="packages.config" />
     <Content Include="package.json" />
     <Content Include="views\index.ejs" />
-    <Content Include="views\login.ejs" />
-    <Content Include="views\profile.ejs" />
-    <Content Include="views\signup.ejs" />
-    <Content Include="views\botIndex.ejs" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -149,6 +134,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
     <Folder Include="public\" />
+    <Folder Include="views\partials\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
