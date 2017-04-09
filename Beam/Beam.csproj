@@ -114,6 +114,7 @@
     <Content Include="public\css\bulma.css" />
     <Content Include="public\css\custom.css" />
     <Content Include="public\css\dashboard.css" />
+    <Content Include="public\css\login.css" />
     <Content Include="public\css\new-age.css" />
     <Content Include="public\css\new-age.min.css" />
     <Content Include="public\css\profile.css" />
