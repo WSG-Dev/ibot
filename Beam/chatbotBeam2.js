@@ -37,6 +37,8 @@ require('./config/passport')(passport);
 app.use(morgan('dev'));
 
 app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public/build'));
+app.use(express.static(__dirname + '/vendors'));
 app.use(express.static(__dirname + '/views'));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
