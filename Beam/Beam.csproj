@@ -96,6 +96,17 @@
     <Content Include="app\js\twitterbot.js" />
     <Content Include="chatbotBeam.js" />
     <Content Include="config\auth.js" />
+    <Content Include="public\build\css\custom.css" />
+    <Content Include="public\build\css\custom.min.css" />
+    <Content Include="public\build\images\back_disabled.png" />
+    <Content Include="public\build\images\back_enabled.png" />
+    <Content Include="public\build\images\back_enabled_hover.png" />
+    <Content Include="public\build\images\forward_disabled.png" />
+    <Content Include="public\build\images\forward_enabled.png" />
+    <Content Include="public\build\images\forward_enabled_hover.png" />
+    <Content Include="public\build\images\loading.gif" />
+    <Content Include="public\build\js\custom.js" />
+    <Content Include="public\build\js\custom.min.js" />
     <Content Include="public\css\bootstrap-theme.css" />
     <Content Include="public\css\bootstrap-theme.min.css" />
     <Content Include="public\css\bootstrap.css" />
