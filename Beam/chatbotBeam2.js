@@ -9,6 +9,8 @@ const colors = require('colors');
 //var express = require('express');
 //var app = express();
 var port = process.env.PORT || 8081;
+var r = require('rethinkdb');
+var config = require('./app/js/config.js');
 
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
@@ -83,6 +85,8 @@ server.listen(port, function() {
 var connections = 0;
 var isConnected = false;
 io.on('connection', function(socket) {
+
+    insertUser();
 
     // console.log('Auth Token is ' + xd);
     connections = connections + 1;
@@ -290,6 +294,33 @@ function SendMessageToBeam(message) {
 
         bc.clienthtml(message);
     }
+}
+
+
+function insertUser() {
+
+    console.log("Setting up RethinkDB...");
+
+    var p = r.connect(config.rethinkdb);
+    p.then(function(conn) {
+
+        //console.log(conn);
+        console.log('Connected OK');
+
+        users = r.table('users');
+
+        console.log("Inserting User...");
+        users.insert({ "name": "Andrew", "age": 20, "interests": ["reading", "playing guitar", "pop music"], "contact info": { "email": "andrew@example.com", "phone": "5555555555" } }).run(conn);
+
+
+
+    }).error(function(error) {
+        console.log(error);
+    });
+
+
+
+
 }
 
 function FollowMessage() {
